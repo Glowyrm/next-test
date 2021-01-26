@@ -8,8 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@jsonforms/core": "^2.4.1",
+    "@jsonforms/examples": "^2.4.1",
+    "@jsonforms/material-renderers": "^2.4.1",
+    "@jsonforms/react": "^2.4.1",
+    "@jsonforms/vanilla-renderers": "^2.5.0",
+    "ajv-06-10-02": "npm:ajv@6.10.2",
+    "ajv-Latest": "npm:ajv@latest",
+    "bootstrap": "^4.5.3",
+    "latest": "^0.2.0",
     "next": "10.0.5",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
