@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { JsonForms } from '@jsonforms/react';
 import { vanillaRenderers, vanillaCells } from '@jsonforms/vanilla-renderers';
 import { materialRenderers, materialCells } from '@jsonforms/material-renderers';
-import Ajv from "ajv-latest";
+import Ajv from "ajv-current";
 
 import { person } from '@jsonforms/examples';
 import personObject from "../../../public/person.json"
-import personValidator from "../../../public/person"
+import personValidator from "../../../public/person2_es6"
 
 const myAjv = new Ajv();
 

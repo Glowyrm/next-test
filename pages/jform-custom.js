@@ -10,8 +10,6 @@ const JFormCustom = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Navbar/>
-
             <div style={{padding: 2 + 'rem', maxWidth: 850 + 'px', margin: 'auto'}}>
                 <p>Implentation of the <a href={'https://jsonforms.io/docs/tutorial'}>Json Forms library</a> using a CUSTOM AJV form validation function</p>
             </div>
