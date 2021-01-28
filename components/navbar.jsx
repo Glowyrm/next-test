@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 
-// Data object contiang the url and and text to display for each link
+// Data object containing the url and and text to display for each link
 // ... links will generated for each link object in this array
 const linksData = [
     {
@@ -21,17 +21,13 @@ const linksData = [
 ]
 
 const Navbar = () => {
-
-    // used to keep track of which link object is the
-    const [indexOfActiveLink, setindexOfActiveLink] = useState(0);
+    // NextJS router hook which gives us access to current page so we can set active link styling
+    const router = useRouter()
 
     // this function is called every time a link is selected 
     let selectLink = (e) => {
         e.preventDefault();
-        // console.log(e.target)
-        // console.log(e.target.dataset.linkindex)
-        setindexOfActiveLink(Number(e.target.dataset.linkindex));
-        
+        router.push(e.target.href);        
     }
 
     return (
@@ -41,9 +37,10 @@ const Navbar = () => {
                 linksData.map((linkObj, i) => {
                     return (
                         <li key={i} className={'nav-item'} onClick={selectLink}>
-                            <Link href={linkObj.link}>
-                                <a data-linkindex={i} className={i === indexOfActiveLink ? 'nav-link active' : 'nav-link'}>{linkObj.text}</a>
-                            </Link>
+                            {/* We compare the useRouter hook pathname property to determine active link styling */}
+                            <a href={linkObj.link} className={router.pathname === linkObj.link? 'nav-link active' : 'nav-link'}>
+                                {linkObj.text}
+                            </a>
                         </li>
                     )
                 })
